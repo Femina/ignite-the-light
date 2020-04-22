@@ -8,8 +8,9 @@ import  *  as  data  from  '../services/data.json';
 @Injectable()
 export class DataService {
 
-  PROJECT_DATA:Project[] = (data  as  any).default;
+  PROJECT_DATA:Project[]  = (data  as  any).default;
   
+
   constructor() {}
 
   getJson()
@@ -41,8 +42,6 @@ export class DataService {
 /**
  * @author Femina
  * This is our main data service. 
- * Due to simplicity & speedy purpose I used local json data with what I have built using our realtime website data.
+ * Due to simplicity & speedy purpose I used hard-coded json data with what I have built using our realtime website data.
  * But in real time scenario, this will be served from Backend ( REST API to fetch data )
  */
-
- 
