@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -22,6 +22,7 @@ import { AppState } from '../../app.state';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('expandMode', [
       state(
@@ -54,7 +55,7 @@ export class ProductListComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private dataService: DataService,private store: Store<AppState>) {
+  constructor(private cdr: ChangeDetectorRef,private dataService: DataService,private store: Store<AppState>) {
     const projectArr = [];
     this.dataService
       .getData()
@@ -74,6 +75,7 @@ export class ProductListComponent {
     filterValue = filterValue.toLowerCase(); 
     this.dataSource.filter = filterValue;
   }
+
 }
 
 export class ProjectDataSource extends DataSource<any> {
