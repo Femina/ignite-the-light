@@ -12,6 +12,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductViewComponent } from './components/product-view/product-view.component'
 
 import {DataService} from './services/data.service';
+import { Store } from '@ngrx/store';
 import { StoreModule } from '@ngrx/store';
 import {reducer} from './reducers/project.reducer';
 
@@ -37,7 +38,7 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
     }),
     NgxJsonViewerModule
   ],
-  providers: [DataService],
+  providers: [DataService,Store],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
