@@ -1,0 +1,16 @@
+.product-view-card
+{
+    max-width: 100%;
+    color: goldenrod;
+    max-height: fit-content;
+}
+.img-thumbnail
+{
+    width:150px !important;
+    height:100px;
+}
+.content
+{
+    float: right;
+    font-size: small;
+}

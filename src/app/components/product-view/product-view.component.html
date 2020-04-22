@@ -1,0 +1,40 @@
+<mat-card class="product-view-card" *ngIf="product">
+  <mat-card-header>
+    
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.industry }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-tile>
+      <img
+        mat-card-image
+        src="{{product.thumbnail_img_url}}"
+        class="img-thumbnail"
+        alt='product.company'
+      />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card-content class="content">
+        
+        <p>
+            The interiors maintain a contemporary theme along with elements of luxe by using a colour palette of brown, gold and beige. The flawless furniture and finishes, help add to the overall feeling of concept of the space and it’s usage.
+        </p>
+        <mat-chip-list>
+          <mat-chip>Designer:{{product.designers}}</mat-chip>
+          <mat-chip>Client: {{product.clients}}</mat-chip>
+          <mat-chip>Contractors: {{product.contractors}}</mat-chip>
+        </mat-chip-list>
+        
+      </mat-card-content>
+      
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card-actions>
+            <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-flat-button color="accent">Contact</button>
+        </mat-card-actions>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
